@@ -1,3 +1,7 @@
+# Annalee's Test App
+
+Below is boilerplate from the tempate
+
 # Python Application Template for Pennsieve
 
 A template and guide for building custom applications to run on the Pennsieve platform. This repository serves as both documentation and a working example that you can use as a starting point for your own applications.
@@ -22,6 +26,7 @@ Building an application for Pennsieve follows a four-step process:
 ![Application Flow](images/docs/develop-app-2.png)
 
 Pennsieve applications follow a simple input-output model:
+
 - Your application reads input files from a designated directory
 - Processes them according to your custom logic
 - Writes output files to an output directory
@@ -97,6 +102,7 @@ Every Pennsieve application requires an `application.json` file that describes i
 ```
 
 **Key fields:**
+
 - **name**: Unique identifier for your application
 - **description**: What your application does
 - **version**: Semantic version number
@@ -158,6 +164,7 @@ if __name__ == '__main__':
 List your dependencies in `requirements.txt` (Python), `install.packages()` (R), or equivalent for your language.
 
 **Example (`requirements.txt`):**
+
 ```
 pandas
 openpyxl
@@ -169,6 +176,7 @@ requests
 This Python template can be adapted for any language:
 
 **R Example:**
+
 ```r
 #!/usr/bin/env Rscript
 
@@ -180,6 +188,7 @@ resources_dir <- Sys.getenv("RESOURCES_DIR")
 ```
 
 **Go Example:**
+
 ```go
 package main
 
@@ -224,6 +233,7 @@ ENTRYPOINT [ "python3.13", "/service/main.py" ]
 ```
 
 **For other languages, modify the base image:**
+
 - R: `FROM r-base:4.1.0`
 - Go: `FROM golang:1.19`
 - Node.js: `FROM node:18`
@@ -233,7 +243,7 @@ ENTRYPOINT [ "python3.13", "/service/main.py" ]
 **Example (`docker-compose.yml`):**
 
 ```yaml
-version: '3.9'
+version: "3.9"
 
 services:
   hackathon-python:
@@ -267,6 +277,7 @@ mkdir -p data/input data/output data/resources
 ```
 
 Your structure should look like:
+
 ```
 python-application-template/
 ├── data/
@@ -303,6 +314,7 @@ docker-compose up --build
 ```
 
 This will:
+
 1. Build your Docker image
 2. Start a container with your application
 3. Mount local directories for input/output
@@ -340,15 +352,18 @@ As you develop:
 ### Troubleshooting
 
 **Container exits immediately:**
+
 - Check logs: `docker-compose logs`
 - Verify environment variables are set correctly
 - Check for syntax errors in your code
 
 **Files not appearing in output:**
+
 - Ensure code writes to `OUTPUT_DIR` environment variable
 - Verify output directory has write permissions
 
 **Dependencies not installed:**
+
 - Check `requirements.txt` is correct
 - Rebuild: `docker-compose up --build`
 
@@ -458,6 +473,7 @@ Once registered, you can:
 4. Start the workflow
 
 Pennsieve handles:
+
 - Container orchestration
 - File mounting
 - Execution monitoring
@@ -505,24 +521,28 @@ Reference this repository structure and adapt it to your preferred language whil
 ## Best Practices
 
 ### Development
+
 - Write clear, well-commented code
 - Implement robust error handling
 - Log progress and errors to stdout
 - Validate inputs before processing
 
 ### Docker
+
 - Minimize image size
 - Use specific base image versions (not `latest`)
 - Cache dependencies appropriately
 - Use multi-stage builds when possible
 
 ### Testing
+
 - Test with various input types
 - Test edge cases and error conditions
 - Verify output format and content
 - Test resource file access if used
 
 ### Documentation
+
 - Keep README updated with changes
 - Document expected input/output formats
 - Provide usage examples
