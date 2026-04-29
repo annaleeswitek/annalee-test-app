@@ -1,9 +1,9 @@
 # Test Repo
 
-This is a test repo. Please enjoy these capybaras in hats.
+This is a test repo. Please enjoy these capybaras.
 
-![Capybara in a hat](images/capybara1.jpg)
+![Capybara](images/capybara1.jpg)
 
-![Another capybara in a hat](images/capybara2.jpg)
+![Another capybara](images/capybara2.jpg)
 
-![Yet another capybara in a hat](images/capybara3.jpg)
+![Yet another capybara](images/capybara3.jpg)
